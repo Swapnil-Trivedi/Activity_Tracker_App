@@ -11,13 +11,27 @@ from .permissions import IsAuthorOrReadOnly
 
 class ActivityList(generics.ListCreateAPIView):
     permission_classes = (IsAuthorOrReadOnly,)
-    queryset=Activity.objects.all()
     serializer_class=ActivitySerializer
+
+    def get_queryset(self):
+        userId=self.request.user.id
+        data=Activity.objects.filter(author_id=userId).exists()
+        if not data:
+            raise NotFound()
+        else:
+            return Activity.objects.filter(author_id=userId)
 
 class ActivityDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthorOrReadOnly,)
-    queryset=Activity.objects.all()
     serializer_class=ActivitySerializer
+    def get_queryset(self):
+        userId=self.request.user.id
+        activityId=self.kwargs['pk']
+        data=Activity.objects.filter(author_id=userId).exists()
+        if not data:
+            raise NotFound()
+        else:
+            return Activity.objects.filter(author_id=userId,id=activityId)
 
 class StepsList(generics.ListCreateAPIView):
     permission_classes = (IsAuthorOrReadOnly,)
