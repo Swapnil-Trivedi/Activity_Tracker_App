@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #3rd Party
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
     #local
     'Activity.apps.ActivityConfig',
 ]
@@ -129,6 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK={
 		    'DEFAULT_PERMISSION_CLASSES':[
 		        'rest_framework.permissions.IsAuthenticated',
-		    ]
+		    ],
+            'DEFAULT_AUTHENTICATION_CLASSES': [ # new
+                'rest_framework.authentication.SessionAuthentication',
+                'rest_framework.authentication.TokenAuthentication'
+            ],
 		}
         
