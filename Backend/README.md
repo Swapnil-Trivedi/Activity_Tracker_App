@@ -27,3 +27,20 @@ List of all the views needed for API
 - activity/<int:pk activity id>/ : ActivityDetail
 - steps/<int:pk activity id>/ : StepsList
 - steps/<int:pk activity id>/ <int:pk step id> : StepDetail
+
+## Endpoints
+List of API endpoints that can be accessed via backend for the api/v1.
+
+Endpoint                           |   HTTP Verb    |     Description
+-----------------------------------|----------------|------------------    
+activity/                          |   GET          | To get the list of all the activites for a user
+activity/<int:pk>/                 |   GET          | To get the details for a specific activity
+steps/<int:activityId>             |   GET          | To get the list of all the steps inside an activity
+steps/<int:activityId>/<int:pk>    |   GET          | To get the detail of a specific step         
+/rest-auth/registration            |   POST         | To register a user     
+/rest-auth/login                   |   POST         | To get the auth tokken from login     
+/rest-auth/logout                  |   GET          | To logout      
+/rest-auth/password/reset          |   POST         | Endpoint to reset password      
+/rest-auth/password/reset/confirm  |   POST         | Endpoint to confirm password reset    
+/schema/                           |   GET          | Endpoint to get api schema
+/docs/                             |   GET          | To access the api documentation              
