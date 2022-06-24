@@ -31,7 +31,7 @@ List of all the views needed for API
 ## Endpoints
 List of API endpoints that can be accessed via backend for the api version1.
 
-Base URL: 127.0.0.1:8000/api/v1/
+Base URL: http://127.0.0.1:8000/api/v1/
 
 Endpoint                           |   HTTP Verb    |     Description
 -----------------------------------|----------------|------------------    
