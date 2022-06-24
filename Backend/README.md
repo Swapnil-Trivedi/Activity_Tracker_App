@@ -29,7 +29,9 @@ List of all the views needed for API
 - steps/<int:pk activity id>/ <int:pk step id> : StepDetail
 
 ## Endpoints
-List of API endpoints that can be accessed via backend for the api/v1.
+List of API endpoints that can be accessed via backend for the api version1.
+
+Base URL: 127.0.0.1:8000/api/v1/
 
 Endpoint                           |   HTTP Verb    |     Description
 -----------------------------------|----------------|------------------    
