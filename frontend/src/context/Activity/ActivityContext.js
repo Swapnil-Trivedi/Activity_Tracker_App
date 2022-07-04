@@ -1,5 +1,5 @@
 import {createContext} from 'react';
 
-const activityContext=createContext();
+const ActivityContext=createContext();
 
-export default activityContext;
+export default ActivityContext;

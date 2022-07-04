@@ -5,10 +5,12 @@ import Home from './components/Home';
 import About from './components/About';
 
 // Custom componenets imports
+import ActivityState from './context/Activity/ActivityState';
 
 function App() {
   return (
     <>
+    <ActivityState>
     <Router>
     <Navbar/>
     <div className="container">
@@ -20,7 +22,7 @@ function App() {
       </Routes>
     </div>
     </Router>
-    
+    </ActivityState>
     </>
   );
 }
