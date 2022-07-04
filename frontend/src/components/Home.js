@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
-import ActivityContext from "../context/Activity/ActivityContext";
+import React from "react";
+import ActivityItem from "./ActivityItem";
 
 export default function Home() {
-
-  const context=useContext(ActivityContext);
-  const {activity,setActivity}=context;
-  console.log(activity)
 
   return (
     <div>
@@ -52,12 +48,7 @@ export default function Home() {
         </form>
       </div>
 
-      <div className="container my-3">
-        <h1>Your Activities</h1>
-        {activity.map((ele)=>{
-          return <h3>{ele.title}</h3>
-        })}
-      </div>
+      <ActivityItem></ActivityItem>
     </div>
   );
 }
