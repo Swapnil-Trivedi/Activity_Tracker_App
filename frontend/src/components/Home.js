@@ -48,7 +48,7 @@ export default function Home() {
             />
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleClick}>
-            Submit
+            Add
           </button>
         </form>
       </div>

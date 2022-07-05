@@ -27,7 +27,7 @@ const ActivityState = (props) => {
   //add Activity
   const addActivity=(title,description)=>{
     const item={
-      "id": 2,
+      "id": Math.random(),
       "author": 1,
       "title":title,
       "description":description,
@@ -38,7 +38,11 @@ const ActivityState = (props) => {
   }
 
   //delete activity
-  const deleteActivity=()=>{}
+  const deleteActivity=(id)=>{
+    console.log(id);
+    const newActivity=activity.filter((activity)=>{return activity.id!==id});
+    setActivity(newActivity);
+  }
   //edit activity
   const editActivity=()=>{}
 

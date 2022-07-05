@@ -1,5 +1,5 @@
 import React,{useContext} from "react";
-import ActivityContext from "../context/Activity/ActivityContext";
+import ActivityContext from "../context/Activity/ActivityContext"; 
 import ActivityCard from "./ActivityCard";
 
 const ActivityItem = () => {

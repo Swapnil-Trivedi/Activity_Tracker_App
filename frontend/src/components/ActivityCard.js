@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import ActivityContext from "../context/Activity/ActivityContext";
 
 function ActivityCard(props) {
   const { ele } = props;
+
+  const context=useContext(ActivityContext);
+  const {deleteActivity}=context;
+
+  const handleDelete=(ele)=>{
+    deleteActivity(ele.id);
+  }
 
   return (
     <div className="card mx-3 my-3" style={{ width: "18rem" }}>
@@ -16,7 +24,7 @@ function ActivityCard(props) {
         <hr />
         <div className="container text-center">
         <i className="fa-solid fa-pen-to-square mx-3 fa-lg"></i>
-        <i className="fa-solid fa-trash-can fa-lg mx-3"></i>
+        <i className="fa-solid fa-trash-can fa-lg mx-3" onClick={()=>{handleDelete(ele)}}></i>
         </div>
       </div>
         
