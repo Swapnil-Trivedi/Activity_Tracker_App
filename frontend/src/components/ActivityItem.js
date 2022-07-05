@@ -4,7 +4,7 @@ import ActivityCard from "./ActivityCard";
 
 const ActivityItem = () => {
   const context = useContext(ActivityContext);
-  const { activity, setActivity } = context;
+  const { activity} = context;
   
   return (
     <div className="row my-3">

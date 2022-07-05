@@ -23,8 +23,27 @@ const ActivityState = (props) => {
   ];
 
   const [activity, setActivity] = useState(activityInitial);
+
+  //add Activity
+  const addActivity=(title,description)=>{
+    const item={
+      "id": 2,
+      "author": 1,
+      "title":title,
+      "description":description,
+      "createdAt": "2022-06-17T17:14:01.626861Z",
+      "completeDate": "2022-06-17T17:14:00Z"
+    }
+    setActivity(activity.concat(item));
+  }
+
+  //delete activity
+  const deleteActivity=()=>{}
+  //edit activity
+  const editActivity=()=>{}
+
   return (
-    <ActivityContext.Provider value={{ activity, setActivity }}>
+    <ActivityContext.Provider value={{ activity, addActivity ,deleteActivity ,editActivity}}>
       {props.children}
     </ActivityContext.Provider>
   );
